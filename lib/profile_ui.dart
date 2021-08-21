@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'view/views.dart';
+import 'package:flutter/services.dart';
+
 class ProfileUI extends StatelessWidget {
   const ProfileUI ({Key? key}) : super(key: key);
 
@@ -14,14 +15,14 @@ class ProfileUI extends StatelessWidget {
                 width: double.infinity,
                 height:MediaQuery.of(context).size.height/3 ,
                 fit: BoxFit.cover,
-                image: NetworkImage('https://preview.redd.it/eolnd5fsw3o61.jpg?width=625&format=pjpg&auto=webp&s=3c2aa090ffea1c4bd967731d65149362f2be7db8'),
+                image: NetworkImage('https://media.discordapp.net/attachments/577900277357871106/878729461728706570/unknown.png'),
               ),
               Positioned(
-                  bottom: 0.0,
+                  bottom: -50.0,
                   child: CircleAvatar(
                     radius: 80,
                     backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/278958026134913024/878703429000757258/cimentinho.jpg?width=502&height=669')
+                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/278958026134913024/878703429000757258/cimentinho.jpg')
                   ),
               ),
           ],
@@ -32,7 +33,7 @@ class ProfileUI extends StatelessWidget {
         ),
         ListTile(
           title: Center(child: Text('Luan Borges'),),
-          subtitle: Center(child: Text('Desenvolvedor'),),
+          subtitle: Center(child: Text('Desenvolvedor de Software'),),
         ),
         TextButton.icon(
             onPressed: (){},
@@ -47,7 +48,7 @@ class ProfileUI extends StatelessWidget {
 
         ),
         ListTile(
-          title: Text('Sobre min'),
+          title: Text('Sobre mim'),
           subtitle: Text('HASUHASIASHASIOHASIOAUSHIASHASIASHIASHASIASIASHIUASHUASHAISHIASUHIAUHASHAISUASIASIASHIAS'),
         ),
       ],

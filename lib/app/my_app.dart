@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:final_project_mobile2/view/views.dart';
+import '../view/views.dart';
+import 'app_routes.dart';
 
 class MyApp extends StatelessWidget {
+
+  static final MyApp _instance = MyApp._internal();
+
+  MyApp._internal();
+
+  factory MyApp() => _instance;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      onGenerateRoute: getAppRoutes().getRoutes,
       title: 'Cool Trivia',
       theme: ThemeData(
         primarySwatch: Colors.pink,
@@ -13,5 +21,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Trivia Home'),
     );
   }
+
+  AppRoutes getAppRoutes() => AppRoutes();
 }
 
