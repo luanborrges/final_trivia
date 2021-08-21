@@ -1,3 +1,5 @@
+import 'package:final_project_mobile2/app/app_routes.dart';
+import 'package:final_project_mobile2/app/app_routes.dart';
 import 'package:flutter/material.dart';
 
 
@@ -20,8 +22,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child:Text(
-          ''
+        child: TextButton(
+          child: Text('About Us'),
+          onPressed: () {
+            Navigator.pushNamed(context, AppRoutes.APP_ROUTE_ABOUT_US);
+          },
         ),
       ),
     );
