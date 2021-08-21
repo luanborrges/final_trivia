@@ -1,6 +1,6 @@
-import 'package:final_project_mobile2/profile_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+
+import 'profile_ui.dart';
 
 class AboutUs extends StatefulWidget {
   AboutUs({Key? key, required this.title}) : super(key: key);
@@ -19,9 +19,7 @@ class _AboutUsState extends State<AboutUs> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body:
-      ProfileUI(),
-
+      body: ProfileUI(),
     );
   }
 }
