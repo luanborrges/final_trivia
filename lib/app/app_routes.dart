@@ -29,7 +29,7 @@ class AppRoutes {
       case APP_ROUTE_QUESTIONS: {
         return MaterialPageRoute<void>(
             settings: routeSettings,
-            builder: (BuildContext context) => Questions(title: 'Questões',)
+            builder: (BuildContext context) => QuestionView(title: 'Questões',)
         );
       }
 

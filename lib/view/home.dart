@@ -1,4 +1,3 @@
-import 'package:final_project_mobile2/model/category.dart';
 import 'package:final_project_mobile2/model/model.dart';
 
 import '../app/app_routes.dart';
@@ -65,5 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
     String difficulty = inputDifficulty ?? 'medium';
 
     questions = await triviaService.fetchQuestions(amount, difficulty);
+    print(questions);
   }
 }

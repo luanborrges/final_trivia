@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'views.dart';
+
 class ProfileUI extends StatelessWidget {
-  const ProfileUI ({Key? key}) : super(key: key);
+
+  const ProfileUI ({Key? key }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context ) {
     return Column(
       children:<Widget> [
         Stack(
@@ -21,7 +22,7 @@ class ProfileUI extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 80,
                     backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/278958026134913024/878703429000757258/cimentinho.jpg?width=502&height=669')
+                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/278958026134913024/878703429000757258/cimentinho.jpg')
                   ),
               ),
           ],
@@ -40,14 +41,14 @@ class ProfileUI extends StatelessWidget {
               Icons.mail,
               color: Colors.white,
         ),
-        label: Text(
+        label: const Text(
             'Contato',
            style: TextStyle(color: Colors.white),
           ),
 
         ),
         ListTile(
-          title: Text('Sobre min'),
+          title: const Text('Sobre mim'),
           subtitle: Text('HASUHASIASHASIOHASIOAUSHIASHASIASHIASHASIASIASHIUASHUASHAISHIASUHIAUHASHAISUASIASIASHIAS'),
         ),
       ],
