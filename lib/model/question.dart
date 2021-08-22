@@ -6,16 +6,14 @@ class Question {
   String? correctAnswer;
   List<dynamic>? wrongAnswers;
 
-  Question({required String question, required String correctAnswer, required List<dynamic> wrongAnswers});
+  Question({required this.question, required this.correctAnswer, required this.wrongAnswers});
 
   factory Question.fromJson(Map<String, dynamic> json) {
-    // print(json['question'].toString());
-    // print(json['correct_answer'].toString());
-    // print(json['incorrect_answers'].toString());
+
     return Question(
-      question: json['question'].toString(),
-      correctAnswer: json['correct_answer'].toString() ,
-      wrongAnswers: json['incorrect_answers'],
+      question: json['question']!.toString(),
+      correctAnswer: json['correct_answer']!.toString() ,
+      wrongAnswers: json['incorrect_answers']!,
     );
   }
 

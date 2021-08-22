@@ -5,13 +5,13 @@ import 'dart:convert';
 
 abstract class AbstractTriviaService {
 
-  Future<List<Question?>?> fetchQuestions();
+  Future<List<Question>> fetchQuestions();
 
 }
 
 class TriviaService {
 
-  Future<List<Question?>?> fetchQuestions(int amount, String difficulty) async {
+  Future<List<Question>> fetchQuestions(int amount, String difficulty) async {
 
     Map<String, String> query = { 'amount': '$amount' , 'difficulty' : difficulty , 'type' : 'multiple'};
 
@@ -25,9 +25,7 @@ class TriviaService {
 
       List<Question> questions = unparsedQuestions.map((question) => Question.fromJson(question)).toList();
 
-      // print(questions); // tá dando uns null furioso aqui, mas se olhar, oq ta entrando nas questões lá no modelo (desfazer o print, ta saindo umas string bala
-
-      return [];
+      return questions;
     } else {
 
       return [];

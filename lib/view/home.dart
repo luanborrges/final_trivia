@@ -19,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final Question exemple = Question(question: 'jiosfjsoif', correctAnswer: 'aa', wrongAnswers: ['b','c', 'd']);
 
-  String teste = 'FetchTest';
+  late List<Question> questions = [];
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.pushNamed(context, AppRoutes.APP_ROUTE_ABOUT_US);
                   },
                 ),TextButton(
-                  child: Text('test'),
+                  child: Text(exemple.toString()),
                   onPressed: () {
-                    _fetchQuestions();
+                    _fetchQuestions(inputAmount: 3 , inputDifficulty: 'easy');
                   },
                 ),
+                Text(
+                  questions.toString()
+                )
               ]
             )
 
@@ -50,12 +53,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  _fetchQuestions ({int? inputAmount, String? inputDifficulty }) {
+  _fetchQuestions ({int? inputAmount, String? inputDifficulty }) async {
     final triviaService = TriviaService();
 
     int amount = inputAmount ?? 10;
     String difficulty = inputDifficulty ?? 'medium';
 
-    triviaService.fetchQuestions(amount, difficulty);
+    questions = await triviaService.fetchQuestions(amount, difficulty);
   }
 }
