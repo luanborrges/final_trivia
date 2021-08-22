@@ -42,6 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     _fetchQuestions(inputAmount: 3 , inputDifficulty: 'easy');
                   },
+                ),TextButton(
+                  child: Text('Questao'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.APP_ROUTE_QUESTIONS);
+                  },
                 ),
                 Text(
                   questions.toString()
