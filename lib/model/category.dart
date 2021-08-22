@@ -7,8 +7,8 @@ class Category {
 
   factory Category.fromJson(Map<String, dynamic> json) {
     return Category(
-      id: json['id'] ?? 0,
-      name: json['name'] ?? '',
+      id: json['id'] ?? 9,
+      name: json['name'] ?? 'General Knowledge',
     );
   }
 }

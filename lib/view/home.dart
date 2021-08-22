@@ -1,4 +1,8 @@
+import 'package:final_project_mobile2/model/category.dart';
+import 'package:final_project_mobile2/model/model.dart';
+
 import '../app/app_routes.dart';
+import '../service/service.dart';
 import 'package:flutter/material.dart';
 
 
@@ -13,6 +17,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  final Question exemple = Question(question: 'jiosfjsoif', correctAnswer: 'aa', wrongAnswers: ['b','c', 'd']);
+
+  String teste = 'FetchTest';
+
   @override
   Widget build(BuildContext context) {
 
@@ -22,13 +30,32 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child:
-          TextButton(
-            child: Text('About Us'),
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.APP_ROUTE_ABOUT_US);
-            },
-          ),
+            Column (
+              children: [
+                TextButton(
+                  child: Text('About Us'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.APP_ROUTE_ABOUT_US);
+                  },
+                ),TextButton(
+                  child: Text('test'),
+                  onPressed: () {
+                    _fetchQuestions();
+                  },
+                ),
+              ]
+            )
+
       ),
     );
+  }
+
+  _fetchQuestions ({int? inputAmount, String? inputDifficulty }) {
+    final triviaService = TriviaService();
+
+    int amount = inputAmount ?? 10;
+    String difficulty = inputDifficulty ?? 'medium';
+
+    triviaService.fetchQuestions(amount, difficulty);
   }
 }
