@@ -33,19 +33,7 @@ class ProfileUI extends StatelessWidget {
         ),
         ListTile(
           title: Center(child: Text('Luan Borges'),),
-          subtitle: Center(child: Text('Desenvolvedor'),),
-        ),
-        TextButton.icon(
-            onPressed: (){},
-            icon: Icon(
-              Icons.mail,
-              color: Colors.white,
-        ),
-        label: const Text(
-            'Contato',
-           style: TextStyle(color: Colors.white),
-          ),
-
+          subtitle: Center(child: Text('github.com/luanborrges'),),
         ),
         ListTile(
           title: const Text('Sobre mim'),

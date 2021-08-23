@@ -50,7 +50,7 @@ class _CategoriesViewState extends State<CategoriesView> {
 
   _rowListCategories() {
     if (categories == []){
-      return Text('carregando...');
+      return ListView(children: [Text('carregando...')]);
     }
     return ListView.builder(
       itemCount: categories.length,

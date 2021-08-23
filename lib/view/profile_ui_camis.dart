@@ -34,20 +34,8 @@ class ProfileUICamis extends StatelessWidget {
 
         ),
         ListTile(
-          title: Center(child: Text('Camila Berthold'),),
-          subtitle: Center(child: Text('Empresaria'),),
-        ),
-        TextButton.icon(
-            onPressed: (){},
-            icon: Icon(
-              Icons.mail,
-              color: Colors.white,
-        ),
-        label: const Text(
-            'Contato',
-           style: TextStyle(color: Colors.white),
-          ),
-
+          title: Center(child: Text('Camila Berthold Pires'),),
+          subtitle: Center(child: Text('github.com/camisnew'),),
         ),
         ListTile(
           title: const Text('Sobre mim'),

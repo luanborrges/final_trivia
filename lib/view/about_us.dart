@@ -22,11 +22,11 @@ class _AboutUsState extends State<AboutUs> {
         appBar: AppBar(
           bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.local_fire_department)),
+              Tab(icon: Icon(Icons.ac_unit_sharp)),
             ],
           ),
-          title: const Text('Tabs'),
+          title: Text(widget.title),
         ),
         body: TabBarView(
           children: [
