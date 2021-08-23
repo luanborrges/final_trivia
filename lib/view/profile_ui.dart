@@ -37,7 +37,7 @@ class ProfileUI extends StatelessWidget {
         ),
         ListTile(
           title: const Text('Sobre mim'),
-          subtitle: Text('HASUHASIASHASIOHASIOAUSHIASHASIASHIASHASIASIASHIUASHUASHAISHIASUHIAUHASHAISUASIASIASHIAS'),
+          subtitle: Text('Top'),
         ),
       ],
     );

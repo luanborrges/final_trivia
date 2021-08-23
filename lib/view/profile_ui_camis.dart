@@ -24,7 +24,7 @@ class ProfileUICamis extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 80,
                     backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/278958026134913024/879215719034814494/unknown.png')
+                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/577900277357871106/879223924586590238/unknown.png')
                   ),
               ),
           ],
