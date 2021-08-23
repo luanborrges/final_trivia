@@ -17,14 +17,14 @@ class ProfileUICamis extends StatelessWidget {
                 width: double.infinity,
                 height:MediaQuery.of(context).size.height/3 ,
                 fit: BoxFit.cover,
-                image: NetworkImage('https://st3.depositphotos.com/9880800/16939/i/600/depositphotos_169394624-stock-photo-businessman.jpg'),
+                image: NetworkImage('https://media.discordapp.net/attachments/577900277357871106/879225606926127134/unknown.png'),
               ),
               Positioned(
                   bottom: 0.0,
                   child: CircleAvatar(
                     radius: 80,
                     backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/278958026134913024/879215719034814494/unknown.png')
+                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/577900277357871106/879223924586590238/unknown.png')
                   ),
               ),
           ],
@@ -38,8 +38,8 @@ class ProfileUICamis extends StatelessWidget {
           subtitle: Center(child: Text('github.com/camisnew'),),
         ),
         ListTile(
-          title: const Text('Sobre mim'),
-          subtitle: Text('Sou Séria'),
+          title: const Text('Sobre Aplicativos II'),
+          subtitle: Text('É bacana, intuitivo, mas chega um momento que tem muito detalhe e fica complicado de acompanhar sem muito tempo disponível. Nota 8/10'),
         ),
       ],
     );
