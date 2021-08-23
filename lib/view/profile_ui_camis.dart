@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ProfileUI extends StatelessWidget {
+class ProfileUICamis extends StatelessWidget {
 
-  const ProfileUI ({Key? key }) : super(key: key);
+
+  const ProfileUICamis ({Key? key }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +17,14 @@ class ProfileUI extends StatelessWidget {
                 width: double.infinity,
                 height:MediaQuery.of(context).size.height/3 ,
                 fit: BoxFit.cover,
-                image: NetworkImage('https://media.discordapp.net/attachments/577900277357871106/879198166560440330/reto.png'),
+                image: NetworkImage('https://st3.depositphotos.com/9880800/16939/i/600/depositphotos_169394624-stock-photo-businessman.jpg'),
               ),
               Positioned(
                   bottom: 0.0,
                   child: CircleAvatar(
                     radius: 80,
                     backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/278958026134913024/879214867486212216/IMG_20210517_105450.jpg')
+                    backgroundImage: NetworkImage('https://media.discordapp.net/attachments/278958026134913024/879215719034814494/unknown.png')
                   ),
               ),
           ],
@@ -32,8 +34,8 @@ class ProfileUI extends StatelessWidget {
 
         ),
         ListTile(
-          title: Center(child: Text('Luan Borges'),),
-          subtitle: Center(child: Text('Desenvolvedor'),),
+          title: Center(child: Text('Camila Berthold'),),
+          subtitle: Center(child: Text('Empresaria'),),
         ),
         TextButton.icon(
             onPressed: (){},
@@ -49,7 +51,7 @@ class ProfileUI extends StatelessWidget {
         ),
         ListTile(
           title: const Text('Sobre mim'),
-          subtitle: Text('HASUHASIASHASIOHASIOAUSHIASHASIASHIASHASIASIASHIUASHUASHAISHIASUHIAUHASHAISUASIASIASHIAS'),
+          subtitle: Text('Sou Séria'),
         ),
       ],
     );
