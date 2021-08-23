@@ -18,6 +18,7 @@ class QuestionView extends StatefulWidget {
 class _QuestionViewState extends State<QuestionView> {
 
   late Question question;
+  late List<Question> questionList;
   late List<String> answers;
   late String answer1;
   late String answer2;
@@ -117,23 +118,26 @@ class _QuestionViewState extends State<QuestionView> {
             ),
           ],
         ),
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.arrow_forward),
+          onPressed: () {
+            setState(() {
+              if( QuestionListController.questions.isNotEmpty) {
+                questionList = QuestionListController.questions;
+                question = questionList.elementAt(1);
+                answers = ShuffleQuestion.shuffleAnswers(question);
+                answer1 = answers[0].toString();
+                answer2 = answers[1].toString();
+                answer3 = answers[2].toString();
+                answer4 = answers[3].toString();
+              }
+            });
+          },
+      ),
     );
   }
 
   MaterialColor checkAnswer(String answer) => answer == question.correctAnswer?  Colors.green : Colors.red ;
 
-  ElevatedButton answerButton(String answer, MaterialColor result) {
-     return ElevatedButton(
-        child: Text(answer),
-        onPressed: (){
-          setState(() {
-            result = checkAnswer(answer);
-          });
-        },
-        style: ElevatedButton.styleFrom(
-          primary: result,
-        ),
-     );
-  }
 }

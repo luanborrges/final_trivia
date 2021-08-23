@@ -28,7 +28,7 @@ class _StartQuizState extends State<StartQuiz> {
           TextButton(
             onPressed: () async {
               Question firstQuestion = await getQuestion();
-              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>  QuestionView(title: 'Question 1', question: firstQuestion)));
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>  QuestionView(title: 'Question', question: firstQuestion)));
             },
             child: Text('Staaart'))
       ],
@@ -36,7 +36,7 @@ class _StartQuizState extends State<StartQuiz> {
   );}
 
   getQuestion() async {
-    questions = await QuestionListController().fetchQuestions(inputAmount: 1, inputDifficulty: 'hard');
+    questions = await QuestionListController().fetchQuestions(inputAmount: 3, inputDifficulty: 'hard');
     return questions.first;
   }
 }

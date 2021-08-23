@@ -3,7 +3,7 @@ import 'package:final_project_mobile2/model/model.dart';
 
 class QuestionListController {
 
-  List<Question> questions = [];
+  static late List<Question> questions;
 
    Future<List<Question>> fetchQuestions({int? inputAmount, String? inputDifficulty }) async {
     final triviaService = TriviaService();
@@ -11,6 +11,7 @@ class QuestionListController {
     int amount = inputAmount ?? 10;
     String difficulty = inputDifficulty ?? 'medium';
 
-    return await triviaService.fetchQuestions(amount, difficulty);
+    questions = await triviaService.fetchQuestions(amount, difficulty);
+    return questions;
   }
 }

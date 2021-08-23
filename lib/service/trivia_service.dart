@@ -13,7 +13,7 @@ class TriviaService {
 
   Future<List<Question>> fetchQuestions(int amount, String difficulty) async {
 
-    Map<String, String> query = { 'amount': '$amount' , 'difficulty' : difficulty , 'type' : 'multiple'};
+    Map<String, String> query = { 'amount': '$amount' , 'difficulty' : difficulty , 'type' : 'multiple' };
 
     final url = Uri.https('opentdb.com', '/api.php', query );
 
