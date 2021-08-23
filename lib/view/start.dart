@@ -36,7 +36,7 @@ class _StartQuizState extends State<StartQuiz> {
   );}
 
   getQuestion() async {
-    questions = await QuestionListController().fetchQuestions();
+    questions = await QuestionListController().fetchQuestions(inputAmount: 1, inputDifficulty: 'hard');
     return questions.first;
   }
 }

@@ -1,7 +1,6 @@
 import '../app/app_routes.dart';
 import 'package:flutter/material.dart';
 
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
 
@@ -15,7 +14,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -34,10 +32,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.APP_ROUTE_START);
                   },
+                ),TextButton(
+                  child: Text("What do we have here"),
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.APP_ROUTE_CATEGORIES);
+                  },
                 ),
               ]
             )
-
       ),
     );
   }

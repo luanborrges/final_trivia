@@ -31,4 +31,24 @@ class TriviaService {
       return [];
     }
   }
+
+  Future<List<Category>> fetchCategory() async {
+
+    final url = Uri.https('opentdb.com', '/api_category.php' );
+
+    final response = await http.Client().get(url);
+
+    if(response.statusCode == 200) {
+
+      List<dynamic> unparsedCategories = json.decode(response.body.toString())['trivia_categories'];
+
+      List<Category> categories = unparsedCategories.map((category) => Category.fromJson(category)).toList();
+
+      print(categories.toString());
+      return categories;
+    } else {
+
+      return [];
+    }
+  }
 }

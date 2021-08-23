@@ -6,7 +6,7 @@ class AppRoutes {
 
   static const String APP_ROUTE_HOME = "/home";
   static const String APP_ROUTE_ABOUT_US = "/about_us";
-  static const String APP_ROUTE_QUESTIONS ='/questions';
+  static const String APP_ROUTE_CATEGORIES ='/categories_view';
   static const String APP_ROUTE_START ='/start';
 
   Route getRoutes(RouteSettings routeSettings) {
@@ -32,12 +32,12 @@ class AppRoutes {
             builder: (BuildContext context) => StartQuiz(title: 'Quiz')
         );
       }
-      // case APP_ROUTE_QUESTIONS: {
-      //   return MaterialPageRoute<void>(
-      //       settings: routeSettings,
-      //       builder: (BuildContext context) => QuestionView(title: 'Questões')
-      //   );
-      // }
+      case APP_ROUTE_CATEGORIES: {
+        return MaterialPageRoute<void>(
+            settings: routeSettings,
+            builder: (BuildContext context) => CategoriesView(title: 'Categorias')
+        );
+      }
 
       default: {
         return MaterialPageRoute<void>(
