@@ -22,9 +22,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child:
             Column (
               children: [
-                Image.network('https://img.freepik.com/fotos-gratis/empresario-pensativo-de-oculos-fazendo-planos-olhando-para-o-canto-superior-esquerdo-e-pensando-de-pe_1258-26400.jpg?size=626&ext=jpg', alignment: Alignment.center,),
-                Text('Quiz dos guri',textAlign: TextAlign.center, style: TextStyle(fontSize: 60), ),
-                Text('serios...'),
                 TextButton(
                   child: Text('About Us'),
                   onPressed: () {

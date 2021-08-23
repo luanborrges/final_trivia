@@ -39,7 +39,7 @@ class ProfileUICamis extends StatelessWidget {
         ),
         ListTile(
           title: const Text('Sobre mim'),
-          subtitle: Text('Sou Sé,,ria'),
+          subtitle: Text('Sou Séria'),
         ),
       ],
     );

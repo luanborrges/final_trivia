@@ -39,12 +39,15 @@ class TriviaService {
     final response = await http.Client().get(url);
 
     if(response.statusCode == 200) {
+      print(response.body.toString());
 
       List<dynamic> unparsedCategories = json.decode(response.body.toString())['trivia_categories'];
 
+      print(unparsedCategories);
+
       List<Category> categories = unparsedCategories.map((category) => Category.fromJson(category)).toList();
 
-      print(categories.toString());
+      categories.forEach((element) {print(element.toString());});
       return categories;
     } else {
 
