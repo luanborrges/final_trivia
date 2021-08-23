@@ -5,12 +5,12 @@ class QuestionListController {
 
   List<Question> questions = [];
 
-   _fetchQuestions({int? inputAmount, String? inputDifficulty }) async {
+   Future<List<Question>> fetchQuestions({int? inputAmount, String? inputDifficulty }) async {
     final triviaService = TriviaService();
 
     int amount = inputAmount ?? 10;
     String difficulty = inputDifficulty ?? 'medium';
 
-    questions = await triviaService.fetchQuestions(amount, difficulty);
+    return await triviaService.fetchQuestions(amount, difficulty);
   }
 }

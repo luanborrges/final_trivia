@@ -1,7 +1,4 @@
-import 'package:final_project_mobile2/model/model.dart';
-
 import '../app/app_routes.dart';
-import '../service/service.dart';
 import 'package:flutter/material.dart';
 
 
@@ -15,10 +12,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  final Question exemple = Question(question: 'jiosfjsoif', correctAnswer: 'aa', wrongAnswers: ['b','c', 'd']);
-
-  late List<Question> questions = [];
 
   @override
   Widget build(BuildContext context) {
@@ -37,33 +30,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.pushNamed(context, AppRoutes.APP_ROUTE_ABOUT_US);
                   },
                 ),TextButton(
-                  child: Text(exemple.toString()),
+                  child: Text("Let's Go!!"),
                   onPressed: () {
-                    _fetchQuestions(inputAmount: 3 , inputDifficulty: 'easy');
-                  },
-                ),TextButton(
-                  child: Text('Questao'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, AppRoutes.APP_ROUTE_QUESTIONS);
+                    Navigator.pushNamed(context, AppRoutes.APP_ROUTE_START);
                   },
                 ),
-                Text(
-                  questions.toString()
-                )
               ]
             )
 
       ),
     );
-  }
-
-  _fetchQuestions ({int? inputAmount, String? inputDifficulty }) async {
-    final triviaService = TriviaService();
-
-    int amount = inputAmount ?? 10;
-    String difficulty = inputDifficulty ?? 'medium';
-
-    questions = await triviaService.fetchQuestions(amount, difficulty);
-    print(questions);
   }
 }

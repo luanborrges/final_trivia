@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:final_project_mobile2/model/model.dart';
 import '../controller/utils.dart';
 
-
 class QuestionView extends StatefulWidget {
 
-  const QuestionView({Key? key, required String title}) : super(key: key);
+  QuestionView({Key? key, required this.title , required this.question}) : super(key: key);
+
+  final String title;
+
+  final Question question;
 
   @override
   _QuestionViewState createState() => _QuestionViewState();
@@ -29,7 +32,7 @@ class _QuestionViewState extends State<QuestionView> {
   void initState() {
     super.initState();
 
-    question = Question( question: "aaaaa", correctAnswer: 'X', wrongAnswers: ['a', 'b', 'c']);
+    question = widget.question;
     answers = ShuffleQuestion.shuffleAnswers(question);
     answer1 = answers[0].toString();
     answer2 = answers[1].toString();
@@ -39,37 +42,82 @@ class _QuestionViewState extends State<QuestionView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.cyan,
-      child: Column(
-        children: [
-          Image.network('https://media.discordapp.net/attachments/278958026134913024/878999789193273364/quiz-plugins-for-WordPress.png', alignment: Alignment.center, height: 120,),
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.all(70),
-            child: Text(question.question.toString(),
-              style: TextStyle(fontSize: 28, color: Colors.blue),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: answerButton(answer1, result1),
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: answerButton(answer2, result2),
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: answerButton(answer3, result3),
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: answerButton(answer4, result4),
-          ),
-        ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
+      body: Container (
+        color: Colors.cyan,
+        child: Column(
+          children: [
+            Image.network('https://media.discordapp.net/attachments/278958026134913024/878999789193273364/quiz-plugins-for-WordPress.png', alignment: Alignment.center, height: 120,),
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.all(70),
+              child: Text(question.question.toString(),
+                style: TextStyle(fontSize: 28, color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              child: ElevatedButton(
+                child: Text(answer1),
+                onPressed: (){
+                  setState(() {
+                    result1 = checkAnswer(answer1);
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: result1,
+                ),
+              )
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              child: ElevatedButton(
+                child: Text(answer2),
+                onPressed: (){
+                  setState(() {
+                    result2 = checkAnswer(answer2);
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: result2,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              child: ElevatedButton(
+                child: Text(answer3),
+                onPressed: (){
+                  setState(() {
+                    result3 = checkAnswer(answer3);
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: result3,
+                ),
+              )
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              child:ElevatedButton(
+                child: Text(answer4),
+                onPressed: (){
+                  setState(() {
+                    result4 = checkAnswer(answer4);
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: result4,
+                ),
+              )
+            ),
+          ],
+        ),
+      )
     );
   }
 

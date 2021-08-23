@@ -1,4 +1,3 @@
-import 'package:final_project_mobile2/view/questions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:final_project_mobile2/view/views.dart';
@@ -8,6 +7,7 @@ class AppRoutes {
   static const String APP_ROUTE_HOME = "/home";
   static const String APP_ROUTE_ABOUT_US = "/about_us";
   static const String APP_ROUTE_QUESTIONS ='/questions';
+  static const String APP_ROUTE_START ='/start';
 
   Route getRoutes(RouteSettings routeSettings) {
 
@@ -26,12 +26,18 @@ class AppRoutes {
             builder: (BuildContext context) => AboutUs(title: 'Sobre Nós',)
         );
       }
-      case APP_ROUTE_QUESTIONS: {
+      case APP_ROUTE_START: {
         return MaterialPageRoute<void>(
             settings: routeSettings,
-            builder: (BuildContext context) => QuestionView(title: 'Questões',)
+            builder: (BuildContext context) => StartQuiz(title: 'Quiz')
         );
       }
+      // case APP_ROUTE_QUESTIONS: {
+      //   return MaterialPageRoute<void>(
+      //       settings: routeSettings,
+      //       builder: (BuildContext context) => QuestionView(title: 'Questões')
+      //   );
+      // }
 
       default: {
         return MaterialPageRoute<void>(
