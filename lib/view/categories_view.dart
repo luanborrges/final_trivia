@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:final_project_mobile2/model/model.dart';
 import 'package:final_project_mobile2/service/service.dart';
@@ -14,10 +15,9 @@ class CategoriesView extends StatefulWidget{
 
 class _CategoriesViewState extends State<CategoriesView> {
 
-  final triviaService = TriviaService();
 
   List<Category> categories = [];
-  late List<Category> categories2;
+  bool _progress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,41 +26,57 @@ class _CategoriesViewState extends State<CategoriesView> {
         title: Text(widget.title),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextButton(
-              onPressed: () async {
-                categories = await getCategories();
-                setState(() {
-                  categories2 = categories;
-                });
-              },
-              child: Text('Categorias')
+          Expanded(
+            flex: 1,
+              child: Column(
+                  children: [
+                    Text('Categorias') ,
+                    _rowProgress()])
           ),
-          // Row(
-          //   children: _rowListCategories()
-          // )
+          Expanded(
+            flex: 5,
+            child: _rowListCategories()
+          )
         ],
       ),
-    );}
-
-  getCategories() async {
-    categories = await triviaService.fetchCategory();
-    return categories;
+      floatingActionButton: FloatingActionButton(
+          onPressed: () async {
+            await getCategories(context);
+        },
+      ),
+    );
   }
 
-  _rowListCategories() {
-    if (categories == []){
-      return ListView(children: [Text('carregando...')]);
+  getCategories(BuildContext context) async {
+    final triviaService = TriviaService();
+    setState(() {
+      _progress = true;
+    });
+    categories = await triviaService.fetchCategory();
+    setState(() {
+      _progress = false;
+    });
+
+  }
+
+   _rowListCategories() {
+    if(categories.isEmpty) {
+      return Text(' ');
     }
     return ListView.builder(
       itemCount: categories.length,
       itemBuilder: (context, index) {
-        print('${categories.elementAt(index).toString()}');
 
         return ListTile(
             title: Text('${categories.elementAt(index).name}'),
         );
       },
     );
+  }
+
+  _rowProgress() {
+    return _progress ? const CircularProgressIndicator() : Container();
   }
 }

@@ -3,12 +3,17 @@ class Category {
   int? id;
   String? name;
 
-  Category({required id, required name});
+  Category({required this.id, required this.name});
 
   factory Category.fromJson(Map<String, dynamic> json) {
     return Category(
       id: json['id'] ?? 9,
       name: json['name'] ?? 'General Knowledge',
     );
+  }
+
+  @override
+  String toString() {
+    return 'Category{id: $id, name: $name}';
   }
 }

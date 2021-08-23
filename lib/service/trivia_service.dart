@@ -44,7 +44,6 @@ class TriviaService {
 
       List<Category> categories = unparsedCategories.map((category) => Category.fromJson(category)).toList();
 
-      categories.forEach((element) {print(element.toString());});
       return categories;
     } else {
 

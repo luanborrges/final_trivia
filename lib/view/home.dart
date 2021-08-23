@@ -28,12 +28,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.pushNamed(context, AppRoutes.APP_ROUTE_ABOUT_US);
                   },
                 ),TextButton(
-                  child: Text("Let's Go!!"),
+                  child: Text("Let's Play!!"),
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.APP_ROUTE_START);
                   },
                 ),TextButton(
-                  child: Text("What do we have here"),
+                  child: Text("Available Categories"),
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.APP_ROUTE_CATEGORIES);
                   },
